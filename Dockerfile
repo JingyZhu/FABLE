@@ -40,6 +40,15 @@ RUN pip install -r requirements.txt
 RUN git clone https://github.com/misja/python-boilerpipe.git deps/python-boilerpipe
 RUN pip install -e deps/python-boilerpipe
 
+# Install vim 
+RUN apt install -y vim
+
+# Install tmux
+RUN apt install -y tmux
+
+# Install azure cli 
+RUN curl -sL https://aka.ms/InstallAzureCLIDeb | bash
+
 # ? USER fable
 
 ENTRYPOINT python3
@@ -50,3 +59,6 @@ ENTRYPOINT python3
 # # To run: sudo docker run --rm -it --mount type=bind,src=/mnt/fable-files,target=/mnt/fable-files --name fable fable 
 # # Copy config.yml: sudo docker cp config.yml CONTAINER:/home/fable/fable/
 # ENTRYPOINT ["python3", "rw.py"]
+
+
+# 'FABLE_CONFIG_KEYVAULT'=1 'FABLE_CONFIG_VAULTNAME'='fabletestdockerkeyvault' 'FABLE_CONFIG_SECRETNAME'='fable-config' 'ROOT_USER'=1

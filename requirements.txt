@@ -25,3 +25,7 @@ sklearn<=0.23.2
 
 azure-identity
 azure-keyvault-secrets
+azure-storage-queue
+azure-storage-file-share
+
+subprocess.run
