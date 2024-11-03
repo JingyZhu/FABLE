@@ -1,4 +1,4 @@
-FROM continuumio/anaconda3
+FROM continuumio/anaconda3:2020.11
 
 # ? RUN useradd --system --create-home -d /home/fable --shell /bin/bash -G root -u 1001 fable
 
