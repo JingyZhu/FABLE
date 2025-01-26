@@ -54,4 +54,13 @@ def test_lang_detect():
                 inconsistent.append(r)
     json.dump(inconsistent, open('test_data/site_lan_test_inconsistent.json', 'w+'), indent=2)
 
-test_lang_detect()
+def test_domdistiller():
+    url = 'https://web.archive.org/web/20140702013724/http://www.sup.org/book.cgi?id=22655'
+    html = crawl.requests_crawl(url)
+    title = text_utils.extract_title(html, version='domdistiller')
+    content = text_utils.extract_body(html, version='domdistiller')
+    print("Title:", title)
+    print("Content:", content)
+
+# test_lang_detect()
+test_domdistiller()
